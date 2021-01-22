@@ -54,10 +54,10 @@
       docker@efba441bb520:/var/www/html/laravelapp$ composer install
       ```
 
-   1. storage フォルダの制限を緩和する
+   1. laravel を動作させるために必要なアクセス権を付与する
 
       ```
-      docker@efba441bb520:/var/www/html/laravelapp$ chmod 777 -R storage
+      docker@efba441bb520:/var/www/html/laravelapp$ chmod 777 -R storage bootstrap/cache
       ```
 
 1. laravelapp をブラウザで表示する
