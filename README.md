@@ -76,7 +76,7 @@
 
 - ホスト側で html 配下のファイルを編集すれば app コンテナに反映される
 - composer コマンドや artisan コマンドは app コンテナの bash で実行する
-- laravelapp は MySQL コンテナの docker_db に接続済みである
+- laravelapp は db コンテナの MySQL データベース:docker_db に接続済みである
 
 ## artisan を使う方法
 
