@@ -12,8 +12,12 @@ init:
 	# echo DOCKER_UID=`id -u` > .env
 	# docker-compose build --no-cache
 	# docker-compose up -d
-	$(appbash) 'cd laravelapp && pwd'
-	$(appbash) 'cd laravelapp && ls -l'
+	$(appbash) 'pwd'
+	$(appbash) 'ls'
+	$(appbash) 'composer install'
+	$(appbash) 'chmod 777 -R storage bootstrap/cache'
+	$(appbash) 'php artisan migrate'
+	$(appbash) 'php artisan db:seed'
 # お手本
 create-project:
 	docker-compose up -d --build
