@@ -36,17 +36,10 @@
    - 下記のようなプロンプトに切り替わる
 
      ```
-     docker@efba441bb520:/var/www/html$
+     docker@efba441bb520:/var/www/html/laravelapp$
      ```
 
 1. app コンテナの bash で laravelapp を install する
-
-   1. app コンテナの bash で /var/www/html/laravelapp に移動する
-
-      ```
-      docker@efba441bb520:/var/www/html$ cd laravelapp/
-      docker@efba441bb520:/var/www/html/laravelapp$
-      ```
 
    1. composer install を実行する
 
@@ -82,7 +75,7 @@
 
 - 例 1) migration を行う方法
 
-  - app コンテナの bash で /var/www/html/laravelapp に移動して下記のコマンドを実行する
+  - app コンテナの bash で 下記のコマンドを実行する
 
     ```
     docker@efba441bb520:/var/www/html/laravelapp$ php artisan migrate
@@ -90,7 +83,7 @@
 
 - 例 2) HelloController を作成する方法
 
-  - app コンテナの bash で /var/www/html/laravelapp に移動して下記のコマンドを実行する
+  - app コンテナの bash で 下記のコマンドを実行する
 
     ```
     docker@efba441bb520:/var/www/html/laravelapp$ php artisan make:controller HelloController

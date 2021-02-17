@@ -35,5 +35,8 @@ RUN echo "${DOCKER_USER}:${DOCKER_PASSWORD}" | chpasswd
 # 作成したユーザのサブグループにsudoを追加する
 RUN usermod -aG sudo ${DOCKER_USER}
 
+# 作業ディレクトリを指定する
+WORKDIR /var/www/html/laravelapp
+
 # 作成したユーザに切り替える(apacheが動かせないためコメントアウトする)
 # USER ${DOCKER_USER}
