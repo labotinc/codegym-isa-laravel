@@ -14,4 +14,5 @@ init:
 	docker-compose up -d
 	$(appbash) 'composer install'
 	$(appbash) 'chmod 777 -R storage bootstrap/cache'
+	echo 'sleep 10' && sleep 10
 	$(appbash) 'php artisan migrate:fresh --seed'
