@@ -11,6 +11,7 @@ down:
 bash:
 	docker-compose exec --user docker app bash
 migrate-seed:
+	$(bash-c) 'composer dump-autoload'
 	$(bash-c) 'php artisan migrate:fresh --seed'
 init:
 	echo DOCKER_UID=`id -u` > .env
@@ -19,4 +20,5 @@ init:
 	$(bash-c) 'composer install'
 	$(bash-c) 'chmod 777 -R storage bootstrap/cache'
 	echo 'sleep 10' && sleep 10
+	$(bash-c) 'composer dump-autoload'
 	$(bash-c) 'php artisan migrate:fresh --seed'
