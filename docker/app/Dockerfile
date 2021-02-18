@@ -19,6 +19,9 @@ RUN apt-get update \
   && apt-get install -y vim \
   && apt-get install -y libicu-dev \
   && apt-get install -y libonig-dev \
+  && apt-get install -y nodejs npm \
+  && npm install -g n \
+  && n stable \
   && docker-php-ext-install pdo_mysql intl
 
 # Laravelで必要になるmodRewriteを有効化する
