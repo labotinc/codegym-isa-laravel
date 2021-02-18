@@ -1,4 +1,24 @@
-## セットアップ手順
+## セットアップ手順(make を使うやり方, かんたん)
+
+1. Makefile があるディレクトリ(リポジトリ直下)で下記のコマンドを実行する
+
+   ```
+   make init
+   ```
+
+   - マシンのスペックにより db コンテナの起動が間に合わないと処理終盤の migration で QueryException が発生する。その場合は http://localhost:10481 で phpMyAdmin が正常に表示されることを確認した後に
+
+     ```
+     make migrate-seed
+     ```
+
+     を実行する
+
+1. laravelapp をブラウザで表示する
+
+   - http://localhost:10480 にアクセスする
+
+## セットアップ手順(make を使わないやり方)
 
 1. app コンテナのユーザ ID をホスト側と合わせるためのファイル .env を作成する
 
