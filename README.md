@@ -110,3 +110,29 @@
 ## ブラウザで phpMyAdmin を表示する方法
 
 - http://localhost:10481 にアクセスする
+
+## make コマンドの解説(Makefile 参照)
+
+- make up
+
+  - docker コンテナを起動する
+
+- make ps
+
+  - docker コンテナの状態を表示する
+
+- make down
+
+  - docker コンテナを停止する
+
+- make bash
+
+  - app コンテナで ユーザ:docker の bash を起動する
+
+- make migrate-seed
+
+  - laravelapp のマイグレーションとシーディングを行う
+
+- make init
+
+  - docker コンテナのビルドから laravelapp のマイグレーションとシーディングまでを行う
