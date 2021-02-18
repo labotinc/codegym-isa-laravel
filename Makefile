@@ -1,4 +1,4 @@
-define appbash
+define bash-c
 	docker-compose exec --user docker app bash -c
 endef
 
@@ -12,7 +12,7 @@ init:
 	echo DOCKER_UID=`id -u` > .env
 	docker-compose build --no-cache
 	docker-compose up -d
-	$(appbash) 'composer install'
-	$(appbash) 'chmod 777 -R storage bootstrap/cache'
+	$(bash-c) 'composer install'
+	$(bash-c) 'chmod 777 -R storage bootstrap/cache'
 	echo 'sleep 10' && sleep 10
-	$(appbash) 'php artisan migrate:fresh --seed'
+	$(bash-c) 'php artisan migrate:fresh --seed'
