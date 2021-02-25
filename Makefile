@@ -19,9 +19,6 @@ init:
 	docker-compose up -d
 	$(bash-c) 'composer install'
 	$(bash-c) 'chmod 777 -R storage bootstrap/cache'
-	echo 'sleep 10' && sleep 10
-	$(bash-c) 'composer dump-autoload'
-	$(bash-c) 'php artisan migrate:fresh --seed'
 create-test-db:
 	docker-compose exec db bash -c 'echo create database docker_test_db | mysql -u root -proot'
 	docker-compose exec db bash -c "echo 'GRANT ALL PRIVILEGES ON docker_test_db.* TO docker_db_user' | mysql -u root -proot"

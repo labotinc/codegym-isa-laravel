@@ -6,14 +6,6 @@
    make init
    ```
 
-   - マシンのスペックにより db コンテナの起動が間に合わないと処理終盤の migration で QueryException が発生する。その場合は http://localhost:10481 で phpMyAdmin が正常に表示されることを確認した後に
-
-     ```
-     make migrate-seed
-     ```
-
-     を実行する
-
 1. laravelapp をブラウザで表示する
 
    - http://localhost:10480 にアクセスする
