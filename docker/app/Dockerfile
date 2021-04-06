@@ -10,7 +10,7 @@ ADD php.ini /usr/local/etc/php/
 ADD 000-default.conf /etc/apache2/sites-enabled/
 
 # composerをインストールする
-RUN curl -sS https://getcomposer.org/composer-2.phar -o /usr/local/bin/composer && chmod +x /usr/local/bin/composer
+RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
 
 # パッケージをインストールする
 RUN apt-get update \
