@@ -11,9 +11,9 @@ ENV LC_ALL ja_JP.UTF-8
 # Set MySQL character
 RUN { \
   echo '[mysqld]'; \
-  echo 'character-set-server=utf8'; \
+  echo 'character-set-server=utf8mb4'; \
   echo 'default_authentication_plugin=mysql_native_password'; \
-  echo 'collation-server=utf8_general_ci'; \
+  echo 'collation-server=utf8mb4_general_ci'; \
   echo '[client]'; \
-  echo 'default-character-set=utf8'; \
+  echo 'default-character-set=utf8mb4'; \
   } > /etc/mysql/conf.d/my.cnf
